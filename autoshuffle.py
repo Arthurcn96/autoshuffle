@@ -29,7 +29,7 @@ class MyHandler(FileSystemEventHandler):
                 #Enquanto o arquivo estiver mudando o valor(sendo baixado/transferido) espere
 
                 while (tamanhoArquivo != os.path.getsize(src)):
-                    print ("O arquivo "+arquivo+" ainda está baixando")
+                    #print ("O arquivo "+arquivo+" ainda está baixando")
                     tamanhoArquivo = os.path.getsize(src)
                     time.sleep(1)
 
