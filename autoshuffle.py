@@ -1,8 +1,8 @@
-/*
-   Programa que automaticamente altera os arquivos da
-   pasta de Download para as respectivas pastas de destino.
-   Autor: Arthur Novais
-*/
+#
+#   Programa que automaticamente altera os arquivos da
+#   pasta de Download para as respectivas pastas de destino.
+#   Autor: Arthur Novais
+#
 
 
 from watchdog.observers import Observer
