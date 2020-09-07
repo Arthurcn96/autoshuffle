@@ -1,4 +1,4 @@
-#
+#!/bin/python3
 #   Programa que automaticamente altera os arquivos da
 #   pasta de Download para as respectivas pastas de destino.
 #   Autor: Arthur Novais
@@ -46,19 +46,21 @@ class MyHandler(FileSystemEventHandler):
                 elif arquivo.lower().endswith(('.webm', '.mp4', '.avi', '.wmv', '.mov', 'flv')):
                     novoDestino = pastaVideo
                 else:
-                    novoDestino = pastaDocumento
+                    print('Tentando enviar '+novoDestino+' para '+ pastaOrigem)
+                    novoDestino = pastaOrigem
                 #Salvo o arquivo no novo caminho
                 os.rename(src,novoDestino + "/" + arquivo)
 
 #Pasta de origem
 pastaOrigem = '/home/arthur/Downloads'
-pastaImagem = '/home/arthur/Imagens'
-pastaCompactado = '/home/arthur/Downloads/Compactado'
-pastaPdf = '/home/arthur/Documentos/PDF'
-pastaDocumento = '/home/arthur/Documentos'
+pastaImagem = '/home/arthur/Pictures'
+pastaDocumento = '/home/arthur/Documents'
 pastaMusica = '/home/arthur/Música'
-pastaVideo = '/home/arthur/Vídeos'
+pastaVideo = '/home/arthur/Videos'
+
 pastaDeb = '/home/arthur/Downloads/deb'
+pastaPdf = '/home/arthur/Documents/PDF'
+pastaCompactado = '/home/arthur/Downloads/Compactado'
 
 #Evento observando se tem alteração na pasta de Origem
 event_handler = MyHandler()
@@ -73,3 +75,5 @@ try:
 except KeyboardInterrupt:
     observer.stop()
 observer.join
+
+
