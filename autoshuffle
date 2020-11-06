@@ -37,29 +37,32 @@ class MyHandler(FileSystemEventHandler):
                     novoDestino = pastaImagem
                 elif arquivo.lower().endswith('.deb'):
                     novoDestino = pastaDeb
+                elif arquivo.lower().endswith(('.mobi', '.epub')):
+                    novoDestino = pastaLivro
                 elif arquivo.lower().endswith('.pdf'):
                     novoDestino = pastaPdf
-                elif arquivo.lower().endswith('.mp3'):
+                # elif arquivo.lower().endswith('.mp3'):
                     novoDestino = pastaMusica
-                elif arquivo.lower().endswith(('.gz', '.tar', '.zip')):
+                elif arquivo.lower().endswith(('.gz', '.tar', '.zip', 'tgz')):
                     novoDestino = pastaCompactado
                 elif arquivo.lower().endswith(('.webm', '.mp4', '.avi', '.wmv', '.mov', 'flv')):
                     novoDestino = pastaVideo
                 else:
-                    print('Tentando enviar '+novoDestino+' para '+ pastaOrigem)
-                    novoDestino = pastaOrigem
+                    novoDestino = pastaDocumento
                 #Salvo o arquivo no novo caminho
+                print('Enviando '+ arquivo+ ' para a pasta ' + novoDestino)
                 os.rename(src,novoDestino + "/" + arquivo)
 
 #Pasta de origem
 pastaOrigem = '/home/arthur/Downloads'
 pastaImagem = '/home/arthur/Pictures'
 pastaDocumento = '/home/arthur/Documents'
-pastaMusica = '/home/arthur/Música'
+pastaMusica = '/home/arthur/Music'
 pastaVideo = '/home/arthur/Videos'
 
 pastaDeb = '/home/arthur/Downloads/deb'
 pastaPdf = '/home/arthur/Documents/PDF'
+pastaLivro = '/home/arthur/Documents/Livros'
 pastaCompactado = '/home/arthur/Downloads/Compactado'
 
 #Evento observando se tem alteração na pasta de Origem
@@ -75,5 +78,3 @@ try:
 except KeyboardInterrupt:
     observer.stop()
 observer.join
-
-
