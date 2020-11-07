@@ -1,0 +1,19 @@
+[directory]
+origem = '/home/arthur/Downloads'
+imagem = '/home/arthur/Pictures'
+musica = '/home/arthur/Music'
+video = '/home/arthur/Videos'
+deb = '/home/arthur/Downloads/deb'
+pdf = '/home/arthur/Documents/PDF'
+livro = '/home/arthur/Documents/Livros'
+documento = '/home/arthur/Documents'
+compactado = '/home/arthur/Downloads/Compactado'
+
+[extension]
+imagem = ('.png', '.jpg', '.jpeg')
+musica = '.mp3'
+video = ('.webm', '.mp4', '.avi', '.wmv', '.mov', 'flv')
+deb = '.deb'
+pdf = '.pdf'
+livro = ('.mobi', '.epub')
+compactado = ('.gz', '.tar', '.zip', 'tgz')
