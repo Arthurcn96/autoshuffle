@@ -10,5 +10,6 @@ O código está com as pastas de origem de acordo com a minha disposição de pa
 ![Exemplo](img/autoShuffle.gif)
 
 ## To Do:
-  - [ ] Criar arquivo com caminho e extensões das pastas
-  - [ ] Criar arquivo de log
+  - [x] Criar arquivo com caminho e extensões das pastas
+  - [ ] Carregar caminho e extensões pelo .init
+  - [ ] Implementar log
