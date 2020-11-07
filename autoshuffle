@@ -8,6 +8,8 @@
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from pathlib import Path
+from util import in_app_path
+import configparser import ConfigParser
 import time
 import json
 import os
@@ -52,6 +54,30 @@ class MyHandler(FileSystemEventHandler):
                 #Salvo o arquivo no novo caminho
                 print('Enviando '+ arquivo+ ' para a pasta ' + novoDestino)
                 os.rename(src,novoDestino + "/" + arquivo)
+
+class Config:
+    """
+        Class that loads the values used on the program
+    """
+    def loadInit():
+        file = in_app_path("./auto.init")
+        config = ConfigParser()
+        config.read(file)
+
+        len_args = {}
+
+       for section in list(config['directory']
+                len_args[section] = config['directory'][section])
+
+       for section in list(config['extension']
+                len_args[section] = config['extension'][section])
+
+        return len_args 
+
+class Log:
+    """
+        Class that save all the 
+    """
 
 #Pasta de origem
 pastaOrigem = '/home/arthur/Downloads'
