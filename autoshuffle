@@ -31,7 +31,6 @@ class MyHandler(FileSystemEventHandler):
                 #Enquanto o arquivo estiver mudando o valor(sendo baixado/transferido) espere
 
                 while (tamanhoArquivo != os.path.getsize(src)):
-                    #print ("O arquivo "+arquivo+" ainda está baixando")
                     tamanhoArquivo = os.path.getsize(src)
                     time.sleep(1)
 
@@ -43,7 +42,7 @@ class MyHandler(FileSystemEventHandler):
                     novoDestino = pastaLivro
                 elif arquivo.lower().endswith('.pdf'):
                     novoDestino = pastaPdf
-                # elif arquivo.lower().endswith('.mp3'):
+                elif arquivo.lower().endswith('.mp3'):
                     novoDestino = pastaMusica
                 elif arquivo.lower().endswith(('.gz', '.tar', '.zip', 'tgz')):
                     novoDestino = pastaCompactado
