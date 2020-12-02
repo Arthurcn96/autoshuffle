@@ -11,5 +11,5 @@ O código está com as pastas de origem de acordo com a minha disposição de pa
 
 ## To Do:
   - [x] Criar arquivo com caminho e extensões das pastas
-  - [ ] Carregar caminho e extensões pelo .init
+  - [x] Carregar caminho e extensões pelo .init
   - [ ] Implementar log
